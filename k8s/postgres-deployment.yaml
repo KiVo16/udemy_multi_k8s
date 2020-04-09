@@ -31,4 +31,6 @@ spec:
             - name: POSTGRES_USER
               value: postgresadmin
             - name: POSTGRES_PASSWORD
-              value: test
+                secretKeyRef:
+                  name: pgpassword
+                  value: PGPASSWORD

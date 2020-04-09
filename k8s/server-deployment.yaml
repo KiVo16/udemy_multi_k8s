@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: stephengrider/multi-server
+          image: kivo/udemy-multi-server
           ports:
             - containerPort: 5000
           env:
@@ -31,4 +31,7 @@ spec:
             - name: PGDATABASE
               value: postgres
             - name: PGPASSWORD
-              value: test
+              valueFrom:
+                secretKeyRef:
+                  name: pgpassword
+                  value: PGPASSWORD
