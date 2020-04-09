@@ -9,11 +9,11 @@ spec:
   rules:
     - http:
         paths: 
-          - path: /?(.*)
+          - path: /
             backend:
               serviceName: client-cluster-service
               servicePort: 3000
-          - path: /api/?(.*)
+          - path: /api/
             backend:
               serviceName: server-cluster-service
               servicePort: 5000
